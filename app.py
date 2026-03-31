@@ -2,18 +2,18 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# ==========================================
+
 # PAGE CONFIG
-# ==========================================
+
 st.set_page_config(
     page_title="Student Risk Dashboard",
     page_icon="🎓",
     layout="wide"
 )
 
-# ==========================================
+
 # CUSTOM CSS
-# ==========================================
+
 st.markdown("""
     <style>
         .stApp { background-color: #ffffff; color: #000000; }
@@ -57,18 +57,18 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ==========================================
+
 # SIDEBAR
-# ==========================================
+
 page = st.sidebar.selectbox("📄 เลือกหน้า", [
     "🎓 Dropout Prediction",
     "🧠 Depression Prediction",
     "📘 Methodology"
 ])
 
-# ==========================================
+
 # PAGE 1: Dropout Prediction
-# ==========================================
+
 if page == "🎓 Dropout Prediction":
 
     st.title("🎓 Student Dropout Risk Prediction")
@@ -122,9 +122,9 @@ if page == "🎓 Dropout Prediction":
         else:
             st.markdown('<div class="result-box risk-low">✅ ความเสี่ยงต่ำ</div>', unsafe_allow_html=True)
 
-# ==========================================
+
 # PAGE 2: Depression Prediction (MLP)
-# ==========================================
+
 elif page == "🧠 Depression Prediction":
 
     st.title("🧠 Student Depression Prediction")
@@ -181,9 +181,9 @@ elif page == "🧠 Depression Prediction":
 
         st.markdown(f"<p style='text-align:center;color:#555;margin-top:0.5rem'>Probability: {prob:.2%}</p>", unsafe_allow_html=True)
 
-# ==========================================
+
 # PAGE 3: Methodology
-# ==========================================
+
 elif page == "📘 Methodology":
 
     st.title("📘 Methodology & Model Development")
